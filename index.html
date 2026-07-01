@@ -165,14 +165,15 @@
       <span id="track-title" class="now-playing__track">—</span>
     </div>
 
-    <audio id="local-audio" class="local-audio" preload="auto" loop></audio>
+    <audio id="local-audio" class="local-audio" preload="none" loop></audio>
 
     <iframe
       id="sc-player"
       class="sc-player"
       title="SoundCloud player"
       allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fcorbyx&color=%238b3a2a&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
+      tabindex="-1"
+      data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fcorbyx&color=%238b3a2a&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
     ></iframe>
 
     <script src="https://w.soundcloud.com/player/api.js"></script>

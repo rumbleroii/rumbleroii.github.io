@@ -1,5 +1,20 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function resetScroll() {
+  window.scrollTo(0, 0);
+}
+
+resetScroll();
+document.addEventListener("DOMContentLoaded", resetScroll);
+window.addEventListener("load", resetScroll);
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) resetScroll();
+});
+
 const BASE_TITLE = "Rithik Marudappa";
 let activeTitle = BASE_TITLE;
 
@@ -294,7 +309,7 @@ function setNowPlaying(title, artist) {
 }
 
 function initWidget() {
-  if (widget || typeof SC === "undefined") return;
+  if (widget || typeof SC === "undefined" || !scIframe.src) return;
   widget = SC.Widget(scIframe);
   widget.bind(SC.Widget.Events.READY, () => {
     widgetReady = true;
@@ -302,6 +317,17 @@ function initWidget() {
   widget.bind(SC.Widget.Events.PLAY, () => {});
   widget.bind(SC.Widget.Events.FINISH, () => {});
   widget.bind(SC.Widget.Events.PLAY_PROGRESS, onPlayProgress);
+}
+
+function ensureScIframe() {
+  if (scIframe.src) return Promise.resolve();
+  const src = scIframe.dataset.src;
+  if (!src) return Promise.resolve();
+
+  return new Promise((resolve) => {
+    scIframe.addEventListener("load", () => resolve(), { once: true });
+    scIframe.src = src;
+  });
 }
 
 function scheduleDim() {
@@ -384,7 +410,8 @@ async function startLocalMusic() {
   startEnergyMonitor();
 }
 
-function startSoundCloudMusic() {
+async function startSoundCloudMusic() {
+  await ensureScIframe();
   initWidget();
   if (!widget) return;
   trackTitle.textContent = "loading…";
@@ -432,9 +459,3 @@ vinyl.addEventListener("click", async () => {
     setDocumentTitle(BASE_TITLE);
   }
 });
-
-if (typeof SC !== "undefined") {
-  initWidget();
-} else {
-  scIframe.addEventListener("load", initWidget);
-}

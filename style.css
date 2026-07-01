@@ -712,8 +712,10 @@ body.is-playing .vinyl {
 
 .sc-player {
   position: fixed;
-  width: 0;
-  height: 0;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
   border: 0;
   opacity: 0;
   pointer-events: none;
@@ -721,8 +723,10 @@ body.is-playing .vinyl {
 
 .local-audio {
   position: fixed;
-  width: 0;
-  height: 0;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
   opacity: 0;
   pointer-events: none;
 }
