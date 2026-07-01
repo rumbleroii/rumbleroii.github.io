@@ -136,6 +136,7 @@ body {
   top: 0.1rem;
   right: -0.15rem;
   margin: 0;
+  overflow: hidden;
   transform: rotate(2.75deg);
   transform-origin: 50% 50%;
 }
@@ -145,7 +146,7 @@ body {
   width: clamp(6.25rem, 22vw, 8.25rem);
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: 58% 22%;
+  object-position: center;
   border: 1px solid var(--hairline);
   background: var(--bg-tint);
   box-shadow: 0 12px 32px rgba(32, 29, 24, 0.08);
@@ -389,12 +390,27 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 0.9rem;
+  gap: 1rem;
 }
 
-.signoff .dot {
-  color: var(--faint);
+.signoff .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.signoff .social-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+}
+
+.signoff .social-icon:hover {
+  color: var(--link);
+  transform: translateY(-1px);
 }
 
 /* ---------- links ---------- */

@@ -1,8 +1,15 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const original = document.title;
+const BASE_TITLE = "Rithik Marudappa";
+let activeTitle = BASE_TITLE;
+
+function setDocumentTitle(title) {
+  activeTitle = title;
+  if (!document.hidden) document.title = title;
+}
+
 document.addEventListener("visibilitychange", () => {
-  document.title = document.hidden ? "👋 still here when you get back" : original;
+  document.title = document.hidden ? `👀 ${BASE_TITLE}` : activeTitle;
 });
 
 // ---- vinyl → rain + beats ----
@@ -283,7 +290,7 @@ function setNowPlaying(title, artist) {
   }
   nowPlaying.hidden = false;
   nowPlaying.classList.add("is-visible");
-  document.title = `🌧️ ${title}`;
+  setDocumentTitle(`🌧️ ${title}`);
 }
 
 function initWidget() {
@@ -422,7 +429,7 @@ vinyl.addEventListener("click", async () => {
       nowPlaying.hidden = true;
       trackTitle.textContent = "—";
     }, 350);
-    document.title = original;
+    setDocumentTitle(BASE_TITLE);
   }
 });
 
