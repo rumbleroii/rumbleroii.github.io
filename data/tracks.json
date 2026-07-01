@@ -1,0 +1,22 @@
+{
+  "default": {
+    "file": "audio/Test_3_KLICKAUD.mp3",
+    "displayTitle": "Treasure",
+    "artist": "riiithuu",
+    "soundcloudUrl": "https://soundcloud.com/corbyx/test-3",
+    "bpm": 78,
+    "dropsPerBeat": 3,
+    "fallBeatsMin": 3,
+    "fallBeatsMax": 5,
+    "freqMin": 150,
+    "freqMax": 2800,
+    "energyThreshold": 1.2,
+    "energyBoost": 8,
+    "calibrationMs": 2000,
+    "phraseBeats": 32,
+    "pourBeats": 3,
+    "pourMultiplier": 7,
+    "drops": []
+  },
+  "tracks": []
+}
