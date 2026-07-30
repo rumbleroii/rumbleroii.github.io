@@ -6,15 +6,25 @@
     <title>Rithik Marudappa</title>
     <meta
       name="description"
-      content="Rithik Marudappa — the bridge between product and engineering. 2.5 years across enterprise and startups."
+      content="Rithik Marudappa — the bridge between product and engineering. Sole engineer behind Metaforms' tabulation engine, previously SAP Analytics Cloud."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rithik Marudappa — Product Engineer" />
+    <meta
+      property="og:description"
+      content="The bridge between product and engineering. Sole engineer behind Metaforms' tabulation engine, previously SAP Analytics Cloud."
+    />
+    <meta property="og:url" content="https://rumbleroii.github.io/" />
+    <meta property="og:image" content="https://rumbleroii.github.io/images/portrait.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=3" />
+    <link rel="stylesheet" href="./style.css?v=4" />
   </head>
   <body>
     <div class="page">
@@ -23,7 +33,7 @@
         <nav class="links" aria-label="elsewhere">
           <a href="https://www.linkedin.com/in/rithik-marudappa/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/rumbleroii" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://docs.google.com/document/d/14xvqpn0kIOSvA1pc2KYgCanOvr8KM8WwRvM3Wtce40o/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+          <a href="./resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
       </header>
 
@@ -40,7 +50,9 @@
           </figure>
           <p class="kicker">hi, I'm</p>
           <h1>Rithik Marudappa</h1>
-          <p class="role">CSE at NIT Warangal '24 · product engineer</p>
+          <p class="role">
+            <span>CSE at NIT Warangal '24</span><span class="role-sep"> · </span><span class="role-secondary">Product Engineer</span>
+          </p>
           <p class="lede">
             I am the bridge.<br />
             2.5 years building, at<br />
@@ -49,7 +61,7 @@
           </p>
           <a
             class="pill"
-            href="https://docs.google.com/document/d/14xvqpn0kIOSvA1pc2KYgCanOvr8KM8WwRvM3Wtce40o/view?usp=sharing"
+            href="./resume.pdf"
             target="_blank"
             rel="noopener"
           >resume</a>
@@ -61,27 +73,28 @@
           <article class="entry">
             <div class="entry-top">
               <h3>Product Engineer</h3>
-              <span class="entry-meta">Metaforms</span>
+              <span class="entry-meta">Metaforms · Aug 2025 – present</span>
             </div>
             <p class="entry-note">
               Sole engineer on the Tabulation Engine — product, architecture, demos, end to end.
             </p>
             <ul class="highlights">
-              <li>DuckDB compute layer with agent-configured crosstabs; benchmarked against WinCross &amp; Q</li>
-              <li>RapidFlow — chat-driven survey builder on Cloudflare Sandbox with Claude Code harnesses</li>
-              <li>Multi-agent data processing module; cut pipeline latency 40% via caching &amp; parallelization</li>
+              <li>Built a compute engine (DuckDB) that AI agents configure to turn raw survey data into statistical crosstabs — significance testing, weighting, confidence intervals — matching output from industry tools like WinCross &amp; Q</li>
+              <li>Led RapidFlow — describe a survey in chat, and agents build and deploy it in an isolated sandbox. Replit/Lovable, for surveys</li>
+              <li>Architected a multi-agent data processing pipeline; cut its latency 40% via caching &amp; parallelization</li>
             </ul>
           </article>
 
           <article class="entry">
             <div class="entry-top">
               <h3>Associate Software Engineer</h3>
-              <span class="entry-meta">SAP Labs</span>
+              <span class="entry-meta">SAP Labs · Jul 2024 – Jul 2025</span>
             </div>
-            <p class="entry-note">SAP Analytics Cloud OEM — Query Builder &amp; Orca Integration Services. Started on SAP Reach as a Software Developer Intern (2023) before joining full-time.</p>
+            <p class="entry-note">SAP Analytics Cloud OEM — analytics tooling that serves complex query results to non-technical business users. Started as a Software Developer Intern (2023) before joining full-time.</p>
             <ul class="highlights">
-              <li>HANA Cloud migration for OIS — POC through production - SAC OEM</li>
-              <li>D3 dashboard with Collaboration Innovation Index for team analytics - SAP Reach</li>
+              <li>Drove the HANA Cloud migration of an integration service from proof-of-concept to production</li>
+              <li>Implemented async batch processing for parallel analytics calls — ~18% faster page loads on large datasets</li>
+              <li>Built a D3 team-analytics dashboard introducing a quantitative index for cross-team progress</li>
             </ul>
           </article>
         </section>
@@ -111,7 +124,7 @@
 
         <section class="block closer">
           <p class="closer-text">
-            into debating, music, football, climbing stuffs and to hear anyone out — wildest ideas especially.
+            Also into debating, music, football, climbing — and hearing anyone out, wildest ideas especially.
           </p>
           <p class="signoff">
             <a href="https://x.com/_rithuu" target="_blank" rel="noopener" class="social-icon" aria-label="X">
@@ -177,6 +190,6 @@
     ></iframe>
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script src="./main.js?v=3"></script>
+    <script src="./main.js?v=4"></script>
   </body>
 </html>

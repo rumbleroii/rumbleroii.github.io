@@ -39,7 +39,7 @@ const localAudio = document.getElementById("local-audio");
 const DIM_DELAY_MS = 1000;
 
 const DEFAULT_RAIN = {
-  file: "audio/Test_3_KLICKAUD.mp3",
+  file: "audio/treasure.mp3",
   displayTitle: "Treasure",
   artist: "riiithuu",
   soundcloudUrl: "https://soundcloud.com/corbyx/test-3",
@@ -437,7 +437,7 @@ async function startMusic() {
   if (useLocalAudio) {
     await startLocalMusic();
   } else {
-    trackTitle.textContent = "no local file — soundcloud fallback";
+    trackTitle.textContent = "tuning in…";
     startSoundCloudMusic();
   }
 }
