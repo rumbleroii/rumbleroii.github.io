@@ -135,15 +135,15 @@ body {
   position: absolute;
   top: 50%;
   right: -0.15rem;
+  width: clamp(6.25rem, 22vw, 8.25rem);
   margin: 0;
-  overflow: hidden;
   transform: translateY(-50%) rotate(2.75deg);
   transform-origin: 50% 50%;
 }
 
 .intro-photo img {
   display: block;
-  width: clamp(6.25rem, 22vw, 8.25rem);
+  width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
@@ -170,10 +170,17 @@ h1 {
   margin-bottom: 0.9rem;
 }
 
-.role {
-  font-size: 0.85rem;
+.nowrap {
+  white-space: nowrap;
+}
+
+.intro-photo figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-align: center;
   color: var(--muted);
-  margin-top: 1.1rem;
 }
 
 .pill {
@@ -222,6 +229,20 @@ h1 {
 /* ---------- sections ---------- */
 .block {
   margin-top: clamp(3.5rem, 10vw, 4.75rem);
+}
+
+.block--bar .block-name::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 1px;
+  margin-top: 0.45rem;
+  background: var(--link);
+  opacity: 0.55;
+}
+
+.block--bar h2 {
+  margin-bottom: 2.1rem;
 }
 
 .block h2 {
@@ -432,11 +453,8 @@ footer {
 
 .intro-photo {
     right: 0;
-    transform: translateY(-50%) rotate(2deg);
-  }
-
-  .intro-photo img {
     width: 4.75rem;
+    transform: translateY(-50%) rotate(2deg);
   }
 
   .entry-top {
@@ -451,14 +469,6 @@ footer {
 
   .lede {
     max-width: none;
-  }
-
-  .role-sep {
-    display: none;
-  }
-
-  .role-secondary {
-    display: block;
   }
 }
 
